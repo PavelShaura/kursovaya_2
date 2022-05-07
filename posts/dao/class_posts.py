@@ -19,10 +19,12 @@ class Posts:
         posts_all = self.load_data()
         return posts_all
 
-    def get_posts_by_user(self, user_name):
+    def get_posts_by_user(self, name):
         """Возвращает посты определенного пользователя"""
-        user_data = self.load_data()
-        return [posts for posts in user_data if user_name in posts['poster_name'].lower()]
+        posts = self.load_data()
+        for post in posts:
+            if name in post['poster_name'].lower():
+                return post
 
     def search_for_posts(self, search_by_tag):
         """Возвращает список постов по ключевому слову"""

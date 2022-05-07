@@ -31,7 +31,7 @@ def search_page():
 
 @posts_blueprint.route("/users/<username>/")
 def feed_page(username):
-    posts = posts_dao.get_posts_by_user(username)
-    return render_template('user-feed.html', posts=posts)
+    user_feed = posts_dao.get_posts_by_user(username)
+    return render_template('user-feed.html', posts=user_feed)
 
 

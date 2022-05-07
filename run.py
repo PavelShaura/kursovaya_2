@@ -7,7 +7,7 @@ app.config['JSON_AS_ASCII'] = False
 
 app.register_blueprint(posts_blueprint)
 
-posts = Posts()
+posts = Posts('./data/data.json')
 
 
 @app.route("/api/posts")
@@ -23,4 +23,4 @@ def post_page_test(uid):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

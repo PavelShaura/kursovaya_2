@@ -28,6 +28,7 @@ class Posts:
 
     def search_for_posts(self, search_by_tag):
         """Возвращает список постов по ключевому слову"""
+
         post_list = self.load_data()
         posts_list = []
         for post in post_list:
@@ -39,5 +40,5 @@ class Posts:
         """Возвращает один пост по его идентификатору"""
         posts = self.load_data()
         for post in posts:
-            if posts["pk"] == pk:
+            if post["pk"] == pk:
                 return post

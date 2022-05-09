@@ -7,6 +7,7 @@ class Posts:
         """ Путь к файлу с данными"""
         self.path = path
 
+
     def load_data(self):
         """ Загружает данные из файла и возвращает обычный list"""
         with open(self.path, "r", encoding="utf-8") as file:

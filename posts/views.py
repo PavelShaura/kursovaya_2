@@ -23,10 +23,12 @@ def post_page(uid):
 @posts_blueprint.route("/search/")
 def search_page():
     search_by = request.args['s']
+    posts = []
     if search_by:
         posts = posts_dao.search_for_posts(search_by)[0:10]
-        if posts:
-            return render_template('search.html', search_by=search_by, posts=posts)
+        return render_template('search.html', search_by=search_by, posts=posts)
+    else:
+        return posts
 
 
 @posts_blueprint.route("/users/<username>/")

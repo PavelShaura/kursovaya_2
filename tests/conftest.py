@@ -9,6 +9,7 @@ def test_client():
     return app.test_client()
 
 
+
 @pytest.fixture()
 def posts_dao():
     posts_instance = Posts("./data/data.json")
